@@ -1,0 +1,92 @@
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"
+    />
+</head>
+
+<style>
+  #intro {
+    background-image: url('/static/flight.jpg');
+    height: 100vh;
+    width: 100vh;
+    /* Background image is centered vertically and horizontally at all times */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #464646;
+    /* Font Colour */
+    color:white;
+  }
+
+  #intro {
+      position: fixed;
+      top: 0;
+      left: 0;
+
+      /* Preserve aspet ratio */
+      min-width: 100%;
+      min-height: 100%;
+    }
+</style>
+
+<body>
+
+    <div id="intro" class="bg-image shadow-2-strong">
+      <div class="mask" style="background-color: rgba(0, 0, 0, 0.8);">
+        <div class="container d-flex align-items-center justify-content-center text-center h-100">
+            <section id="contact" class="contact">
+          <div class="text-white">
+              <h1 class="mb-3">Contact me</h1>
+              <h2 class="mb-3">Please fill out the form below, Thank you! </h2>
+            <form action="{{ url_for('views.contact') }}" method=post>
+                {{ form.csrf_token }}
+                    <div class="form-group">
+                      <label for="Email">Email</label>
+                      <input type="email" id="Email" name="Email" class="form-control" placeholder="Email">
+                    </div>
+                  <div class="form-group">
+                    <label for="Name">Name</label>
+                    <input type="text" class="form-control" id="Name" name="Name" placeholder="XY Software Corp.">
+                  </div>
+                  <div class="form-group">
+                      <label for="Subject">Subject</label>
+                    <input type="text" class="form-control" id="Subject" name="Subject" placeholder="We´re Hiring!">
+                  </div>
+                    <div class="form-group">
+                    <label for="Message">Message</label>
+                    <textarea class="form-control" id="Message" name="Message" rows="3"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Send</button>
+
+          </form>
+          </div>
+                <div class="text-white">
+            <h1 class="mb-3">Further Links</h1>
+            <h5 class="mb-4">Find the landing page, projects and education below</h5>
+            <a class="btn btn-outline-light btn-lg m-2" href="/home" role="button">Home</a>
+            <a class="btn btn-outline-light btn-lg m-2" href="/projects" role="button">Projects</a>
+              <a class="btn btn-outline-light btn-lg m-2" href="/education" role="button">Education</a>
+          </div>
+            </section>
+        </div>
+
+    </div>
+    </div>
+
+</body>
+<body>
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+%}
+
+{% endblock %}
+</body>

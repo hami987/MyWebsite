@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.bg-image {
+  /* The image used */
+  background-image: url("/static/code.jpg");
+
+  /* Center and scale the image nicely */
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: 100% 100%;
+  flex: 1;
+  height: 100%;
+}
+
+.content {
+  flex: 1;
+  height: 100%;
+  overflow: auto;
+}
+
+</style>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<section class="container">
+  <div class="bg-image">
+  </div>
+  <div class="content">
+    <div class="container d-flex align-items-center justify-content-center text-center h-100">
+          <div class="text-white">
+            <h1 class="mb-3">Get to know me</h1>
+            <h5 class="mb-4">Find my education path and projects below</h5>
+            <a class="btn btn-outline-light btn-lg m-2" href="/education" role="button">Education</a>
+            <a class="btn btn-outline-light btn-lg m-2" href="/projects" role="button">Projects</a>
+              <a class="btn btn-outline-light btn-lg m-2" href="/contact" role="button">Contact Me</a>
+          </div>
+        </div>
+  </div>
+
+</section>
+
+</body>
+
+
+</html>

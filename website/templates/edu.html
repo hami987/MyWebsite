@@ -1,0 +1,122 @@
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"
+    />
+</head>
+
+<style>
+  #intro {
+    background-image: url('/static/duke.jpeg');
+    height: 100vh;
+    width: 100vh;
+    /* Background image is centered vertically and horizontally at all times */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #464646;
+    /* Font Colour */
+    color:white;
+  }
+
+  #intro {
+      position: fixed;
+      top: 0;
+      left: 0;
+
+      /* Preserve aspet ratio */
+      min-width: 100%;
+      min-height: 100%;
+    }
+</style>
+
+
+
+
+<header>
+    <div id="intro" class="bg-image shadow-2-strong">
+      <div class="mask" style="background-color: rgba(0, 0, 0, 0.8);">
+        <div class="container d-flex align-items-center justify-content-center text-center h-100">
+          <section id="resume" class="resume">
+          <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+              <h2>Resume</h2>
+              <p>Coming from a scientific background, curiosity and eagerness to learn define me. Apart from the formal education listed below, I have always searched ways to educate myself on various topics outside of University classes.</p>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-6">
+                <h3 class="resume-title">Education</h3>
+                <div class="resume-item">
+                  <h4>Master of Science</h4>
+                  <h5>2019 - Present</h5>
+                  <p><em>Freie Universität Berlin</em></p>
+                  <p>Specializing in Neurobiology and Computational Biology</p>
+                    <p><em>Expected Graduation mark: 1.0</em></p>
+                </div>
+                  <div class="resume-item">
+                  <h4>Exchange Program - Full Stipend</h4>
+                  <h5>2021</h5>
+                  <p><em>Duke University, NC, USA</em></p>
+                  <p>Received a full stipend for one semester abroad to participate in Duke University´s Neurbiology PhD program.</p>
+                </div>
+                <div class="resume-item">
+                  <h4>Bachelor of Science</h4>
+                  <h5>2016 - 2019</h5>
+                  <p><em>Freie Universität Berlin</em></p>
+                  <p>Studied general Biology and later on focused on Neurobiology and Computational Biology.</p>
+                    <p><em>Graduation mark: 1.8</em></p>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <h3 class="resume-title">Professional Experience</h3>
+                <div class="resume-item">
+                  <h4>Neurobiology Tutor</h4>
+                  <h5>2017 - 2021</h5>
+                  <p><em>Freie Universität Berlin</em></p>
+                  <ul>
+                      <p>Tutor for Biology Bachelor's students. Duties included preparation and execution of practical courses, teaching of neurobiological principles and proper scientific writing.</p>
+                      <p>Duties also included visualization of experimental data using R and Python.</p>
+                      <p>Furthermore, a custom built neuron-simulator based on a RaspberryPI and a graphical UI made in Python was used to teach students about the basics of neural signaling.</p>
+                  </ul>
+                </div>
+                  <h3 class="resume-title">Tech Stack</h3>
+                <div class="resume-item">
+                  <ul>
+                      <p>matplotlib, Tensorflow, PostgreSQL, Pandas, Numpy, pytorch, R-Shiny, Django, R, Flask, SQL, Git, Python</p>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="text-white">
+            <h1 class="mb-3">Further Links</h1>
+            <h5 class="mb-4">Find the landing page and projects below</h5>
+            <a class="btn btn-outline-light btn-lg m-2" href="/home" role="button">Home</a>
+            <a class="btn btn-outline-light btn-lg m-2" href="/projects" role="button">Projects</a>
+              <a class="btn btn-outline-light btn-lg m-2" href="/contact" role="button">Contact Me</a>
+          </div>
+        </section><!-- End Resume Section -->
+
+          </div>
+        </div>
+    </div>
+
+</header>
+<body>
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+%}
+
+{% endblock %}
+</body>
