@@ -1,9 +1,13 @@
+import os.path
+import json
 from flask import jsonify,Blueprint, render_template, request,\
     flash, redirect, url_for, send_from_directory, Response, send_file,Markup, session
 from flask_login import login_required, current_user
 from website import db, mail
+import plotly
 from forms import ContactForm
 from flask_mail import Message
+from data_analysis import transportationDataVis
 
 views = Blueprint('views', __name__)
 
@@ -44,6 +48,13 @@ def contact():
             return render_template('contact.html', form=form)
     elif request.method == 'GET':
         return render_template('contact.html', form=form)
+
+@views.route("/dashboard_python",methods=["GET"])
+def dashboard_python():
+    figures = transportationDataVis("website/datasets/tfl-journeys-type.csv")
+    line_plt = json.dumps(figures[0], cls=plotly.utils.PlotlyJSONEncoder)
+    pie_chart = json.dumps(figures[1], cls=plotly.utils.PlotlyJSONEncoder)
+    return render_template("Charts.html", line_plot=line_plt, pie_chart=pie_chart)
 
 
 

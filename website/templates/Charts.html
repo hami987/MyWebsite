@@ -1,0 +1,33 @@
+{% extends "base.html" %} {% block title %}Transportation Data{% endblock %} {% block content
+%}
+<head>
+<style>
+h1 {text-align: center;}
+</style>
+</head>
+
+
+<html>
+ <body>
+  <h1>London Transportation Data - Line Plot</h1>
+  <div id='chart1' class='chart'></div>
+</body>
+<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+<script type='text/javascript'>
+  var graphs = {{line_plot | safe}};
+  Plotly.plot('chart1',graphs,{});
+</script>
+
+ <body>
+  <h1>London Transportation Data - Pie Chart</h1>
+  <div id='chart2' class='chart'></div>
+</body>
+<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+<script type='text/javascript'>
+  var graphs = {{pie_chart | safe}};
+  Plotly.plot('chart2',graphs,{});
+</script>
+</html>
+
+
+{% endblock %}
